@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     let mixer = AKMixer()
     var ocilators: [AKOscillator] = []
     var panners: [AK3DPanner] = []
-    let N = 2
-    let fMax: Double = 1000
+    let N: Int = 6
+    let fMax: Double = 2000
     let fMin: Double = 500
     let thetaMax = M_PI
     let distance = 10
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         // setup audio system
         ocilators = (0..<N).map { i in
             let o = AKOscillator()
-            o.frequency = fMin + Double(i) * (fMax-fMin)/(N-1)
+            o.frequency = fMin + Double(i) * (fMax-fMin)/Double(N-1)
             o.start()
             return o
         }
@@ -71,25 +71,25 @@ class ViewController: UIViewController {
         }
         
         
+        let column = Int(self.size.width / 2)
+        var indexes: [Int] = [] // sorry but for some reason my indexer killed my every time I tried to use a map!
+        for i in 0..<self.N {
+            let row = Int(i * (self.size.height-1) / Float(self.N - 1))
+            indexes.append( (row * Int( self.size.width ) + column) * 4 )
+        }
         
         rawOut.dataAvailableCallback = {
-            buffer in
+            (buffer: [UInt8]) in
             
-            let pixelLocations = (0..<self.N).map { i in
-                return Int(i * self.size.height / Double(self.N - 1) + self.size.width/2)
+            let amplitudes: [Double] = indexes.map { index in
+                let r = Double(buffer[index])
+                let g = Double(buffer[index + 1])
+                let b = Double(buffer[index + 2])
+                return (r + g + b) / (3*255)
             }
-            
-            let amplitudes = pixelLocations.map { pixelLocation in
-                let r = buffer[pixelLocation]
-                let g = buffer[pixelLocation + 1]
-                let b = buffer[pixelLocation + 2]
-                return Double(r + g + b) / Double(3*255)
-            }
-            
-            
 
             dispatch_async(dispatch_get_main_queue(),{
-                amplitudes.enumerate().map { (i, amplitude) in
+                amplitudes.enumerate().forEach { (i, amplitude) in
                     self.ocilators[i].amplitude = amplitude
                 }
             })

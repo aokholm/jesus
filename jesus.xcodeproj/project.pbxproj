@@ -403,6 +403,7 @@
 				9F2A8BB31D7DA7CD00519E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
