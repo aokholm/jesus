@@ -12,7 +12,48 @@
 		9F2A8BA81D7DA7CD00519E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2A8BA61D7DA7CD00519E4F /* Main.storyboard */; };
 		9F2A8BAA1D7DA7CD00519E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2A8BA91D7DA7CD00519E4F /* Assets.xcassets */; };
 		9F2A8BAD1D7DA7CD00519E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2A8BAB1D7DA7CD00519E4F /* LaunchScreen.storyboard */; };
+		9F2A8BBD1D7DAA3200519E4F /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A8BBA1D7DAA1A00519E4F /* GPUImage.framework */; };
+		9F2A8BBE1D7DAA3200519E4F /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A8BBA1D7DAA1A00519E4F /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F2A8BC41D7DAD6A00519E4F /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2A8BC31D7DAD6A00519E4F /* AudioKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F2A8BB91D7DAA1A00519E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B1251C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+		9F2A8BBB1D7DAA1A00519E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B12F1C66A262001F2BDC;
+			remoteInfo = GPUImageTests;
+		};
+		9F2A8BBF1D7DAA3200519E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCD1B1241C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9F2A8BC11D7DAA3200519E4F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9F2A8BBE1D7DAA3200519E4F /* GPUImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9F2A8B9F1D7DA7CD00519E4F /* jesus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jesus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +63,8 @@
 		9F2A8BA91D7DA7CD00519E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F2A8BAC1D7DA7CD00519E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F2A8BAE1D7DA7CD00519E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "GPUImage2/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
+		9F2A8BC31D7DAD6A00519E4F /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2A8BC41D7DAD6A00519E4F /* AudioKit.framework in Frameworks */,
+				9F2A8BBD1D7DAA3200519E4F /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +83,10 @@
 		9F2A8B961D7DA7CD00519E4F = {
 			isa = PBXGroup;
 			children = (
+				9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */,
 				9F2A8BA11D7DA7CD00519E4F /* jesus */,
 				9F2A8BA01D7DA7CD00519E4F /* Products */,
+				9F2A8BC31D7DAD6A00519E4F /* AudioKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +111,15 @@
 			path = jesus;
 			sourceTree = "<group>";
 		};
+		9F2A8BB51D7DAA1A00519E4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F2A8BBA1D7DAA1A00519E4F /* GPUImage.framework */,
+				9F2A8BBC1D7DAA1A00519E4F /* GPUImageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,10 +130,13 @@
 				9F2A8B9B1D7DA7CD00519E4F /* Sources */,
 				9F2A8B9C1D7DA7CD00519E4F /* Frameworks */,
 				9F2A8B9D1D7DA7CD00519E4F /* Resources */,
+				9F2A8BC11D7DAA3200519E4F /* Embed Frameworks */,
+				9F2A8BC21D7DAD3200519E4F /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9F2A8BC01D7DAA3200519E4F /* PBXTargetDependency */,
 			);
 			name = jesus;
 			productName = jesus;
@@ -110,12 +169,35 @@
 			mainGroup = 9F2A8B961D7DA7CD00519E4F;
 			productRefGroup = 9F2A8BA01D7DA7CD00519E4F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9F2A8BB51D7DAA1A00519E4F /* Products */;
+					ProjectRef = 9F2A8BB41D7DAA1A00519E4F /* GPUImage-iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9F2A8B9E1D7DA7CD00519E4F /* jesus */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9F2A8BBA1D7DAA1A00519E4F /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 9F2A8BB91D7DAA1A00519E4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F2A8BBC1D7DAA1A00519E4F /* GPUImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.xctest;
+			remoteRef = 9F2A8BBB1D7DAA1A00519E4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9F2A8B9D1D7DA7CD00519E4F /* Resources */ = {
@@ -130,6 +212,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F2A8BC21D7DAD3200519E4F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AudioKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F2A8B9B1D7DA7CD00519E4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,6 +240,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F2A8BC01D7DAA3200519E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 9F2A8BBF1D7DAA3200519E4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9F2A8BA61D7DA7CD00519E4F /* Main.storyboard */ = {
@@ -249,6 +356,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = jesus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.aokholm.jesus;
@@ -260,6 +372,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = jesus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.aokholm.jesus;
